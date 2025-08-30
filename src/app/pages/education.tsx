@@ -3,10 +3,24 @@ import { motion } from "framer-motion";
 
 const Education = () => {
   const { isLoading, error, data } = useUserdata();
-  if (isLoading) return <p className=" bg-secondary text-center text-2xl font-semibold
-   text-[#25c1dd] animate-pulse">Loading...</p>;
-  if (error) return <p className="text-center text-2xl font-semibold  animate-pulse
-   text-red-500 bg-secondary">Error happened!</p>;
+  if (isLoading)
+    return (
+      <p
+        className=" bg-secondary text-center text-2xl font-semibold
+   text-[#25c1dd] animate-pulse"
+      >
+        Loading...
+      </p>
+    );
+  if (error)
+    return (
+      <p
+        className="text-center text-2xl font-semibold  animate-pulse
+   text-red-500 bg-secondary"
+      >
+        Error happened!
+      </p>
+    );
 
   return (
     <section className="  px-6 bg-secondary pb-20 ">
@@ -27,15 +41,21 @@ const Education = () => {
           </p>
         ) : (
           <div className="max-w-5xl mx-auto space-y-6">
-            {data.education.map(({ id, university, date, major }) => (
+            {(data?.education ?? []).map(({ id, university, date, major }) => (
               <div
                 key={id}
                 className="p-6 rounded-xl border
                  border-[#25c1dd]   bg-white dark:bg-[#1e1e1e]  shadow-md transition duration-300 hover:shadow-lg"
               >
-                <h2 className="text-xl font-bold text-[#006a6a]">{university}</h2>
-                <p className="text-lg mt-2 dark:text-gray-300 font-medium">{date}</p>
-                <p className="mt-3 text-base dark:text-gray-300 font-semibold">{major}</p>
+                <h2 className="text-xl font-bold text-[#006a6a]">
+                  {university}
+                </h2>
+                <p className="text-lg mt-2 dark:text-gray-300 font-medium">
+                  {date}
+                </p>
+                <p className="mt-3 text-base dark:text-gray-300 font-semibold">
+                  {major}
+                </p>
               </div>
             ))}
           </div>

@@ -14,11 +14,11 @@ createRoot(document.getElementById("root")!).render(
     <Providers>
       <ThemeProvider>
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter  basename="/web-portfolio">
+          <BrowserRouter basename="/web-portfolio">
             <App />
           </BrowserRouter>
         </QueryClientProvider>
       </ThemeProvider>
     </Providers>
-  </StrictMode>
+  </StrictMode>,
 );

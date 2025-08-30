@@ -1,4 +1,4 @@
-import contactimg from '../images/see-CUiBe9gY.png';
+import contactimg from "../images/see-CUiBe9gY.png";
 import { Input } from "@/shared/components/ui/input";
 import { Textarea } from "@/shared/components/ui/textarea";
 import { Button } from "@/shared/components/ui/button";
@@ -16,7 +16,7 @@ const Contact = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 6000); 
+    }, 6000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -54,15 +54,19 @@ const Contact = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-secondary">
-        <p className="text-2xl font-semibold text-[#25c1dd] animate-pulse">Loading...</p>
+        <p className="text-2xl font-semibold text-[#25c1dd] animate-pulse">
+          Loading...
+        </p>
       </div>
     );
   }
 
   return (
     <section id="contact" className=" bg-secondary  ">
-      <h1 className="text-3xl font-semibold text-[#25c1dd] w-fit mx-auto
-       drop-shadow-md md:mb-10 ">
+      <h1
+        className="text-3xl font-semibold text-[#25c1dd] w-fit mx-auto
+       drop-shadow-md md:mb-10 "
+      >
         Contact Me
       </h1>
       <div className="container mx-auto px-4  ">

@@ -1,4 +1,4 @@
-#  📜*Personal Portfolio*
+# 📜*Personal Portfolio*
 
 ## Sections
 
@@ -12,6 +12,7 @@
 ---
 
 ## 🛠 Tech Stack:
+
 - React
 - Vite
 - Tailwind CSS
@@ -19,8 +20,8 @@
 - Firebase
 - Shadcn UI
 - TanStack Query
----
 
+---
 
 ## 🔧 Features
 
@@ -31,12 +32,13 @@
 - Dynamic content such as courses and projects is fetched from Firebase, with data handling powered by TanStack Query. The layout adapts seamlessly to all screen sizes, providing an optimized experience across mobile, tablet, and desktop.
 
 - In collaboration with my teammate [Abdallah](https://github.com/Abdallah-Alqiran), A mobile admin version was developed to allow easy editing and management of portfolio data through Firebase.
+
 ---
 
 ## 🌐 [View Portfolio from here]()
 
-
 ## 📱 [View Mobile Admin Version Code](https://github.com/Abdallah-Alqiran/Portfolio-Admin)
+
 Internal version of the portfolio app for real-time Firebase editing and live updates to the user-facing app.
 
 created by [Abdallah Alqiran](https://github.com/Abdallah-Alqiran)

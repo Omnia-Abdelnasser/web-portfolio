@@ -1,33 +1,47 @@
 import img2 from "../images/download (2).jpeg";
 import img3 from "../images/download (1).png";
-import img1 from "../images/download (2).png"
+import img1 from "../images/download (2).png";
 import img4 from "../images/download.png";
-import img5 from "../images/download (3).jpeg"
-import img6 from "../images/download (3).png"
-import img7 from "../images/notion.png"
+import img5 from "../images/download (3).jpeg";
+import img6 from "../images/download (3).png";
+import img7 from "../images/notion.png";
+import defaultAvatar from "../images/see-CUiBe9gY.png";
 import { Button } from "@/shared/components/ui/button";
 import { Download } from "lucide-react";
 import { useUserdata } from "@/shared/components/firestore";
 import { motion } from "framer-motion";
 
 const Home = () => {
-  const image = {
+  const image: Record<string, string> = {
     linkedin: img4,
     whatsapp: img3,
     facebook: img2,
-    github:img1,
-    leetcode:img5,
-    codeforces:img6,
-    notion:img7
-
+    github: img1,
+    leetcode: img5,
+    codeforces: img6,
+    notion: img7,
   };
 
   const { isLoading, error, data } = useUserdata();
 
-  if (isLoading) return <p className=" bg-secondary text-center text-2xl font-semibold
-   text-[#25c1dd] animate-pulse">Loading...</p>;
-  if (error) return <p className="text-center text-2xl font-semibold  animate-pulse
-   text-red-500 bg-secondary">Error happened!</p>;
+  if (isLoading)
+    return (
+      <p
+        className=" bg-secondary text-center text-2xl font-semibold
+   text-[#25c1dd] animate-pulse"
+      >
+        Loading...
+      </p>
+    );
+  if (error)
+    return (
+      <p
+        className="text-center text-2xl font-semibold  animate-pulse
+   text-red-500 bg-secondary"
+      >
+        Error happened!
+      </p>
+    );
 
   return (
     <div className="bg-secondary w-full pt-[100px]">
@@ -37,9 +51,9 @@ const Home = () => {
         max-w-md p-6 transition-all"
       >
         <motion.img
-          src={data?.userImage}
+          src={data?.userImage ?? defaultAvatar}
           loading="eager"
-          width={288} 
+          width={288}
           height={288}
           alt="Profile"
           className="w-72 h-72 rounded-full object-cover"
@@ -57,7 +71,7 @@ const Home = () => {
         </h3>
 
         <div className="flex space-x-4 mt-6">
-          {data?.contactAndAccounts.map((user) => (
+          {data?.contactAndAccounts?.map((user) => (
             <a
               href={user.url}
               key={user.id}
@@ -66,7 +80,7 @@ const Home = () => {
               className="hover:scale-110 transition-transform duration-300"
             >
               <img
-                src={image[user.webName] ?? img4}
+                src={image[user.webName] ?? defaultAvatar}
                 loading="lazy"
                 width={40}
                 height={40}
