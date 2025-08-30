@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/shared/components/ui/carousel";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
@@ -32,67 +33,75 @@ const Projects = () => {
     );
 
   return (
-    <div id="projects" className=" bg-secondary py-20 ">
-      <h1 className="text-3xl font-semibold text-[#25c1dd] w-fit mx-auto pt-10 pb-1 tracking-wide drop-shadow-md">
-        Projects
-      </h1>
+    <>
+      <Helmet>
+        <title>Projects | Abdallah Alqiran</title>
+        <meta
+          name="description"
+          content="Explore the projects of Abdallah Alqiran."
+        />
+      </Helmet>
+      <div id="projects" className=" bg-secondary py-20 ">
+        <h1 className="text-3xl font-semibold text-[#25c1dd] w-fit mx-auto pt-10 pb-1 tracking-wide drop-shadow-md">
+          Projects
+        </h1>
 
-      <div className="mt-10 px-4">
-        <div className="relative w-full px-8">
-          <Carousel className="w-full">
-            <CarouselPrevious />
-            <CarouselContent className="-ml-4">
-              {data?.projects?.map((project, index) => (
-                <CarouselItem
-                  key={project.id}
-                  className="pl-4 md:basis-1/2 lg:basis-1/4"
-                >
-                  <motion.div
-                    className="rounded-2xl shadow-md overflow-hidden flex flex-col"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: index * 0.1,
-                      duration: 0.6,
-                      ease: "easeOut",
-                    }}
+        <div className="mt-10 px-4">
+          <div className="relative w-full px-8">
+            <Carousel className="w-full">
+              <CarouselPrevious />
+              <CarouselContent className="-ml-4">
+                {data?.projects?.map((project, index) => (
+                  <CarouselItem
+                    key={project.id}
+                    className="pl-4 md:basis-1/2 lg:basis-1/4"
                   >
-                    {/* تحسين الصورة */}
-                    <img
-                      src={project.image}
-                      loading="lazy"
-                      width={320}
-                      height={192}
-                      alt={`Project ${project.id}`}
-                      className="w-full aspect-video object-cover"
-                    />
+                    <motion.div
+                      className="rounded-2xl shadow-md overflow-hidden flex flex-col"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: index * 0.1,
+                        duration: 0.6,
+                        ease: "easeOut",
+                      }}
+                    >
+                      <img
+                        src={project.image}
+                        loading="lazy"
+                        width={320}
+                        height={192}
+                        alt={`Project ${project.id}`}
+                        className="w-full aspect-video object-cover"
+                      />
 
-                    <div className="p-4 mt-auto">
-                      <h3 className="text-[#25c1dd] font-semibold mb-4 text-lg">
-                        {project.projectName}
-                      </h3>
+                      <div className="p-4 mt-auto">
+                        <h3 className="text-[#25c1dd] font-semibold mb-4 text-lg">
+                          {project.projectName}
+                        </h3>
 
-                      <Link to={`/details/project/${project.id}`}>
-                        <Button
-                          className="bg-[#006a6a] text-gray-300 w-full px-6 py-2 rounded-xl shadow-lg 
+                        <Link to={`/details/project/${project.id}`}>
+                          <Button
+                            className="bg-[#006a6a] text-gray-300 w-full px-6 py-2 rounded-xl shadow-lg 
                           transition duration-300 flex items-center gap-2 border text-bolder
                           border-transparent hover:border-[#25c1dd] hover:bg-gray-300
                            hover:text-[#25c1dd] mb-2"
-                        >
-                          More Details
-                        </Button>
-                      </Link>
-                    </div>
-                  </motion.div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselNext />
-          </Carousel>
+                          >
+                            More Details
+                          </Button>
+                        </Link>
+                      </div>
+                    </motion.div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselNext />
+            </Carousel>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

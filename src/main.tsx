@@ -8,6 +8,7 @@ import "./index.css";
 // import "./transition.css";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./app/providers/theme-provider";
+import { HelmetProvider } from "react-helmet-async";
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -15,7 +16,9 @@ createRoot(document.getElementById("root")!).render(
       <ThemeProvider>
         <QueryClientProvider client={queryClient}>
           <BrowserRouter basename="/web-portfolio">
-            <App />
+            <HelmetProvider>
+              <App />
+            </HelmetProvider>
           </BrowserRouter>
         </QueryClientProvider>
       </ThemeProvider>
