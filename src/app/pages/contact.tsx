@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/shared/components/firebase";
-import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -41,13 +40,6 @@ const Contact = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Get in touch with Abdallah Alqiran, a passionate web developer."
-        />
-      </Helmet>
       <section id="contact" className=" bg-secondary  ">
         <h1 className="text-3xl font-semibold text-[#25c1dd] w-fit mx-auto md:mb-10 ">
           Contact Me

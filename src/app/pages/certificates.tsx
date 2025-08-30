@@ -8,7 +8,6 @@ import {
   CarouselPrevious,
 } from "@/shared/components/ui/carousel";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Certificates = () => {
@@ -41,22 +40,8 @@ const Certificates = () => {
   const hasCertificates =
     Array.isArray(data?.certificates) && data.certificates.length > 0;
 
-  <Helmet>
-    <title>Certificates | Abdallah Alqiran</title>
-    <meta
-      name="description"
-      content="Explore the certificates obtained by Abdallah Alqiran, showcasing his skills and expertise."
-    />
-  </Helmet>;
   return (
     <>
-      <Helmet>
-        <title>Certificates | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Explore the certificates obtained by Abdallah Alqiran, showcasing his skills and expertise."
-        />
-      </Helmet>
       <div id="certificates" className="bg-secondary pt-12 pb-16">
         {hasCertificates && (
           <h1 className="text-3xl font-semibold text-[#25c1dd] w-fit mx-auto pt-6 pb-1 tracking-wide drop-shadow-md">

@@ -1,7 +1,6 @@
 import { useUserdata } from "@/shared/components/firestore";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 
 function isValidUrl(url?: string): boolean {
   if (!url) return false;
@@ -40,13 +39,6 @@ const FreeContents = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Free Contents | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Explore the free contents offered by Abdallah Alqiran."
-        />
-      </Helmet>
       <div id="contentsTitle" className="bg-secondary pt-12 pb-16">
         {hasContents && (
           <h1 className="text-3xl text-[#25c1dd] font-semibold w-fit mx-auto pb-1 tracking-wide drop-shadow-md mt-6">

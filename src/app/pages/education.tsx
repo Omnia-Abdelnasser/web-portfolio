@@ -1,6 +1,5 @@
 import { useUserdata } from "@/shared/components/firestore";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 
 const Education = () => {
   const { isLoading, error, data } = useUserdata();
@@ -25,13 +24,6 @@ const Education = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Education | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Explore the educational background of Abdallah Alqiran."
-        />
-      </Helmet>
       <section className="  px-6 bg-secondary pb-20 ">
         <div className="flex items-center justify-center mb-10">
           <h1 className="text-3xl font-semibold text-[#25c1dd] tracking-wide drop-shadow-sm">

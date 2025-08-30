@@ -8,7 +8,6 @@ import {
 } from "@/shared/components/ui/carousel";
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 
 const Courses = () => {
   const { isLoading, error, data } = useUserdata();
@@ -34,13 +33,6 @@ const Courses = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Courses | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Explore the courses taken by Abdallah Alqiran, showcasing his skills and expertise."
-        />
-      </Helmet>
       <section id="courses" className="pt-10 pb-14 px-4 bg-secondary">
         <h1 className="text-3xl font-semibold text-[#25c1dd] w-fit mx-auto mb-6 pb-1 tracking-wide drop-shadow-md">
           Courses

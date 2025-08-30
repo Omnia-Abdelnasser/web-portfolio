@@ -1,7 +1,6 @@
 import { useUserdata } from "@/shared/components/firestore";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 
 const Skills = () => {
   const { isLoading, error, data } = useUserdata();
@@ -27,13 +26,6 @@ const Skills = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Skills | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Explore the skills of Abdallah Alqiran."
-        />
-      </Helmet>
       <section id="skills" className=" px-4 bg-secondary pt-10 pb-12 ">
         <h1
           className="text-3xl font-semibold text-[#25c1dd]

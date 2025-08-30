@@ -8,7 +8,6 @@ import {
   CarouselPrevious,
 } from "@/shared/components/ui/carousel";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
@@ -34,13 +33,6 @@ const Projects = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Projects | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Explore the projects of Abdallah Alqiran."
-        />
-      </Helmet>
       <div id="projects" className=" bg-secondary py-20 ">
         <h1 className="text-3xl font-semibold text-[#25c1dd] w-fit mx-auto pt-10 pb-1 tracking-wide drop-shadow-md">
           Projects

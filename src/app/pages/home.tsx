@@ -10,7 +10,6 @@ import { Button } from "@/shared/components/ui/button";
 import { Download } from "lucide-react";
 import { useUserdata } from "@/shared/components/firestore";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const image: Record<string, string> = {
@@ -41,13 +40,6 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Home | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Welcome to the portfolio of Abdallah Alqiran."
-        />
-      </Helmet>
       <div className="bg-secondary w-full pt-[100px]">
         <div
           id="home"

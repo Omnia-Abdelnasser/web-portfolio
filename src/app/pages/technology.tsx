@@ -1,7 +1,6 @@
 import { useUserdata } from "@/shared/components/firestore";
 import { motion } from "framer-motion";
 import { Settings } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 
 const Technology = () => {
   const { isLoading, error, data } = useUserdata();
@@ -26,13 +25,6 @@ const Technology = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Technologies | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Explore the technologies and tools used by Abdallah Alqiran."
-        />
-      </Helmet>
       <section className=" px-4  pt-14 pb-14 bg-secondary ">
         <h1
           className="text-3xl font-semibold

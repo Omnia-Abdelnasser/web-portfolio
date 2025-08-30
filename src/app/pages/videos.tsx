@@ -1,7 +1,6 @@
 import { useUserdata } from "@/shared/components/firestore";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 
 function getYouTubeId(url: string): string | null {
   if (!url) return null;
@@ -36,13 +35,6 @@ const Videos = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Videos | Abdallah Alqiran</title>
-        <meta
-          name="description"
-          content="Watch the videos of Abdallah Alqiran."
-        />
-      </Helmet>
       <div id="videos" className=" bg-secondary pt-12 pb-16 ">
         {hasVideos && (
           <h1 className="text-3xl text-[#25c1dd] font-semibold w-fit mx-auto pb-1 tracking-wide drop-shadow-md mt-6">
