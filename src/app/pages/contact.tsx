@@ -1,12 +1,11 @@
-import contactimg from '../images/see-CUiBe9gY.png';
+import { db } from "@/shared/components/firebase";
+import { Button } from "@/shared/components/ui/button";
 import { Input } from "@/shared/components/ui/input";
 import { Textarea } from "@/shared/components/ui/textarea";
-import { Button } from "@/shared/components/ui/button";
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { arrayUnion, doc, updateDoc } from "firebase/firestore";
-import { db } from "@/shared/components/firebase";
 import emailjs from "@emailjs/browser";
+import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +16,7 @@ const Contact = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500); 
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -69,7 +68,9 @@ const Contact = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
-        <p className="text-2xl font-semibold text-primary animate-pulse">Loading...</p>
+        <p className="text-2xl font-semibold text-primary animate-pulse">
+          Loading...
+        </p>
       </div>
     );
   }
@@ -98,13 +99,15 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="hidden lg:block relative"
           >
-            <div className="absolute -inset-4 bg-primary/10 rounded-full blur-3xl"></div>
-            <img
-              src={contactimg}
-              loading="lazy"
-              alt="Contact"
-              className="relative w-full max-w-lg mx-auto rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
-            />
+            <div className="absolute -inset-6 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-3xl opacity-60"></div>
+            <div className="relative w-full max-w-md mx-auto aspect-square rounded-3xl shadow-xl bg-card border border-border/50 p-2 flex items-center justify-center hover:scale-[1.03] transition-all duration-500 group/logo overflow-hidden">
+              <img
+                src={`${import.meta.env.BASE_URL}logo.png`}
+                loading="lazy"
+                alt="Logo"
+                className="relative w-full h-full object-contain transition-transform duration-500 group-hover/logo:scale-105 filter drop-shadow-[0_1px_4px_rgba(0,0,0,0.05)] dark:drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] group-hover/logo:dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+              />
+            </div>
           </motion.div>
 
           <motion.div
@@ -117,7 +120,9 @@ const Contact = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
             <div className="relative bg-card text-card-foreground shadow-2xl rounded-3xl p-8 md:p-12 border border-border/50 backdrop-blur-sm space-y-8">
               <div className="space-y-4">
-                <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground ml-1">Email Address</label>
+                <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground ml-1">
+                  Email Address
+                </label>
                 <Input
                   type="email"
                   placeholder="name@example.com"
@@ -128,7 +133,9 @@ const Contact = () => {
               </div>
 
               <div className="space-y-4">
-                <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground ml-1">Message</label>
+                <label className="text-sm font-bold uppercase tracking-widest text-muted-foreground ml-1">
+                  Message
+                </label>
                 <Textarea
                   placeholder="How can I help you?"
                   className="w-full bg-secondary/50 border-border/50 focus:border-primary focus:ring-primary/20 rounded-xl px-6 py-5 h-48 resize-none text-lg font-medium transition-all"

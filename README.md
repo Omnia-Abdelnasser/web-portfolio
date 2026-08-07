@@ -39,7 +39,7 @@
 
 ---
 
-## 🌐 [View Portfolio from here](https://abdallah-alqiran.github.io/web-portfolio/)
+<!-- ## 🌐 [View Portfolio from here](https://abdallah-alqiran.github.io/web-portfolio/)
 
 This Web Portfolio Created by: [Omniya Abdelnasser](https://github.com/Omnia-Abdelnasser)
 
@@ -47,4 +47,4 @@ This Web Portfolio Created by: [Omniya Abdelnasser](https://github.com/Omnia-Abd
 
 Internal version of the portfolio app for real-time Firebase editing and live updates to the user-facing app.
 
-created by [Abdallah Alqiran](https://github.com/Abdallah-Alqiran)
+created by [Abdallah Alqiran](https://github.com/Abdallah-Alqiran) -->
